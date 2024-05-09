@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'knox',
+    'django_accounts',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +124,22 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+## ADD TO STATICS
+### to collect the statics of the apps
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static')
+]
+### the destinations of de files 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_build')
+
+
+## CUSTOM USERS
+AUTH_USER_MODEL = "django_accounts.User"
+
+
+## REST_FRAMEWORK - KNOX
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+}

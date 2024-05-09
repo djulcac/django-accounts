@@ -2,8 +2,7 @@
 
 ## Install
 
-<a href="https://pypi.org/project/djulcac-django-accounts/" target="_blank">Pypi</a>
-
+[Pypi](https://pypi.org/project/djulcac-django-accounts/)
 
     pip install djulcac-django-accounts
 
@@ -24,7 +23,7 @@ Uploading the distribution archives
     python3 -m twine upload dist/*
 
 
-## Test previous versions
+## Test current versions
 
     pip install git+ssh://git@github.com/djulcac/django-accounts.git
     pip install git+ssh://git@github.com/djulcac/django-accounts.git@1-add-app
