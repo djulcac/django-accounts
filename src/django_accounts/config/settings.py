@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'knox',
-    'django_accounts',
+    'django_accounts.accounts_base',
 ]
 
 MIDDLEWARE = [
@@ -136,7 +136,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_build')
 
 
 ## CUSTOM USERS
-AUTH_USER_MODEL = "django_accounts.User"
+AUTH_USER_MODEL = "accounts_base.User"
 
 
 ## REST_FRAMEWORK - KNOX
