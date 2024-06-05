@@ -18,6 +18,7 @@ classifiers = [
 ]
 
 [tool.setuptools]
+package-dir = {"" = "django_accounts"}
 packages = { find = { where = ["django_accounts"] } }
 
 [project.urls]

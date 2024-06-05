@@ -2,4 +2,4 @@ Django>=5.0.4
 Markdown>=3.6
 djangorestframework>=3.15.1
 django-rest-knox>=4.2.0
-git+ssh://git@github.com/djulcac/django-accounts.git
+git+ssh://git@github.com/djulcac/django-accounts.git@6-move-src
