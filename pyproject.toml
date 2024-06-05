@@ -17,6 +17,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[tool.setuptools]
+packages = ["django_accounts"]
+
 [project.urls]
 Homepage = "https://github.com/djulcac/django-accounts"
 Issues = "https://github.com/djulcac/django-accounts/issues"
