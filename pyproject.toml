@@ -18,7 +18,7 @@ classifiers = [
 ]
 
 [tool.setuptools]
-packages = ["django_accounts"]
+packages = { find = { where = ["django_accounts"] } }
 
 [project.urls]
 Homepage = "https://github.com/djulcac/django-accounts"
