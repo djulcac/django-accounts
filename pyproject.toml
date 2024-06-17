@@ -17,9 +17,8 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
-[tool.setuptools]
-package-dir = {"" = "django_accounts"}
-packages = { find = { where = ["django_accounts"] } }
+[tool.setuptools.packages.find]
+exclude = ["run_project","samples"]
 
 [project.urls]
 Homepage = "https://github.com/djulcac/django-accounts"
