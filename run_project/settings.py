@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_accounts.accounts_base',
+    'django_accounts.accounts_sun',
 ]
 
 MIDDLEWARE = [
@@ -125,4 +125,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 ## CUSTOM USERS
-AUTH_USER_MODEL = "accounts_base.User"
+AUTH_USER_MODEL = "accounts_sun.User"
