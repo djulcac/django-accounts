@@ -22,6 +22,10 @@ Uploading the distribution archives
     python3 -m pip install --upgrade twine
     python3 -m twine upload dist/*
 
+### Notes
+
+- [Packaging Your Python Code With pyproject.toml | Complete Code Conversation](https://www.youtube.com/watch?v=v6tALyc4C10)
+- [Multiple top-level packages discovered in a flat-layout](https://stackoverflow.com/questions/72294299/multiple-top-level-packages-discovered-in-a-flat-layout)
 
 ## Test current versions
 
