@@ -18,7 +18,7 @@ classifiers = [
 ]
 
 [tool.setuptools.packages.find]
-exclude = ["run_project", "samples"]
+exclude = ["app", "samples"]
 
 [project.urls]
 Homepage = "https://github.com/djulcac/django-accounts"
