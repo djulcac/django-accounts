@@ -3,6 +3,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from knox.models import AuthToken
 from rest_framework import generics
 from rest_framework import status
+from rest_framework import permissions, views
 from rest_framework.response import Response
 
 from . import serializers
@@ -39,9 +40,26 @@ class LoginAPI(generics.CreateAPIView):
                 'username': user.username,
                 'email': user.email,
                 'first_name': user.first_name,
+                'last_name': user.last_name,
                 'token': AuthToken.objects.create(user)[1],
             })
         return Response(
             {'error': 'Invalid Credentials'},
             status=status.HTTP_401_UNAUTHORIZED
         )
+
+
+class MeAPIView(views.APIView):
+    # serializer_class = serializers.MeReadSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        serializer = serializers.MeReadSerializer(request.user)
+        return Response(serializer.data)
+
+    def patch(self, request):
+        serializer = serializers.MeUpdateSerializer(request.user, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
