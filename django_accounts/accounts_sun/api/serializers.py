@@ -9,12 +9,22 @@ class LoginSerializer(serializers.Serializer):
     )
 
 
-class MeSerializer(serializers.ModelSerializer):
+class MeReadSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = [
             'username',
             'email',
             'first_name',
+            'last_name',
             'id',
+        ]
+
+
+class MeUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields = [
+            'first_name',
+            'last_name',
         ]
