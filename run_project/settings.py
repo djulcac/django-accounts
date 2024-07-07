@@ -128,3 +128,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ## CUSTOM USERS
 AUTH_USER_MODEL = "accounts_sun.User"
+
+## REST_FRAMEWORK - KNOX
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+}
